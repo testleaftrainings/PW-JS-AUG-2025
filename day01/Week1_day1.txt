@@ -1,0 +1,93 @@
+📑 Agenda for day 01 - Introduction to JavaScript
+
+📌 JS Introduction and History
+📌 Primitives Data Types
+📌 Variables 
+📌 Operators and Conditional statements
+
+
+npm install
+  -->node package manager --> 
+  npm init playwright
+  npx -->node package executor --> executor 
+
+javascript --> interpreter programming language
+           --> light weight 
+           --> objectOriented (Prototype based)
+           --> node.js engine for execution outside the browser
+           --> js engine (browser specific)
+        Features:
+         -->supports both front end and backend dev (full stack development)
+           clientside and server side validation
+           Even driven architecture (event loop)
+           asynchronous programming
+           Single thread non blocking i/o
+
+js -->transpiled (AST -->abstract syntax tree)
+  parsing the code -->byte code exe -->binaries(0's and 1's)
+
+jit compiler
+  variables -->a,b
+   expressions--> *
+    
+Datatypes
+  -->type of information you store 
+  primitive and non primitive -->object specific array
+   number
+   string
+   boolean
+   undefined
+
+   null -->intentionally to make the varible null (not using the value)
+   bigInt -->long numbers
+   symbol --> unique information -->accessed in the way of object type
+
+
+
+   Number -->holds  data -->single , multiple digits, decimals
+
+   filename -->camelCase
+   variables -->camelCase -->isActive
+   class -->PascalCase  --> LoginPage
+
+run the code 
+ node fileName.js
+-----------------------
+ var
+ ES 15  
+ let const
+
+ difference- 
+ var let const
+
+ var 
+ 1. allows redeclaration of variables and also reassignement 
+   var username="user1"
+   var username="user2"
+
+ let 
+  doesnt allow to redeclare
+  allows to reassign the value
+
+  var -->allows redeclare and reassignement
+  let -->doesnot allows redeclare and allows reassignment
+  for both let and var -->reassign -->last value will be used in further steps
+                                   -->existing data becomes unused
+
+
+2. Scoping -->position of the usage 
+
+var -->global/ function scoping
+let -->block level {}
+
+undefined -->declaration -->values is not assined
+not defined -->haven't declared
+
+
+
+3.Hoisting 
+
+const --final  -->doesnot allow redeclare/ reassignment
+       -->block level
+control statements-->if for
+string
