@@ -1,0 +1,178 @@
+Agenda for Day02 
+--------------- 
+📌 Hoisting (var vs let vs const)
+📌 Operators & Conditional Statements 
+📌 Looping  
+📌 String
+
+functionScoping
+        var -->can be accessible anywhere inside the function 
+         function fn(){
+            var data=""
+            if(){
+                data is visible
+            }
+
+            data is visible
+         }
+
+data -->will not be visible
+
+let/const -->only visible inside the {} where it is declared
+ function fn(){
+            let/cost info=""
+            if(){
+                let/const data1=""
+                info is visible
+            }
+            data1 will not visible
+            info is visible
+
+         }
+
+ info is not visible
+            data1 will not visible
+
+
+Hoisting
+--------
+js -->functions and variables will bring the declaration to the top
+
+var -->hoisting happens
+let/const --> hoisting happens but throws the error with refernce 
+
+
+var vs let vs const
+1.
+var -->allows to redeclare/ reassign 
+let -->allows to reassign but wont allow to redeclare
+const -->doesnot allow to redeclare/reassign
+
+2.
+var -->function level scoping
+let/const -->block level scoping
+
+3.hoisting
+ var -->hoisting happens 
+ let and const-->hoisting happens but cant access before initializing the variable
+
+Debug shortcuts
+F9 → Toggle breakpoint on/off
+Ctrl + Shift + F9 → Delete all breakpoints
+cmd+shift+F9
+F5 → Start debugging / Continue
+Shift + F5 → Stop debugging
+F10 → Step Over (runs the current line, skips into functions)
+F11 → Step Into (goes inside the function call)
+Shift + F11 → Step Out (finishes the current function and returns)
+
+----------
+control statements 
+ Conditional statements -->yes no
+ Looping statemnts -->repeat -->same concept again and again
+
+ arithmentic
++
+-
+/  -->quotient
+*
+%  --> 1 (remainder)
+
+comparision of data 
+< 
+>
+>=
+<=
+==
+!=
+++  --> data +1
+-- -->data-1
+
+logical
+&& , ||
+
+ternary operator -->? 
+
+switch  -->single value to be compared
+if -->range to be compared
+
+browser ="chrome"
+switch(brower)
+case chrome
+switch    case
+browser==chrome
+browser==edge
+browser == firefox
+
+
+fileType
+case "Mpeg":
+   uplodFile(path of file)
+
+
+Looping 
+for , forEach, for in for of
+while,do while
+
+
+i++ -->post increment
+++i -->pre increment
+
+== -->loose equality
+=== -->strict equality
+
+
+print even number between 20 to 30 
+  
+20/2  ==>0
+for(i=20 to 30){   
+    modulus
+    if(i==>remainder as zero){
+        print the number as even
+    }
+}
+
+
+while -->when condition is unknown
+let i=1
+while(i<10){
+    print i
+    i++
+}
+
+---------------------
+String -->collection of characters
+""
+''
+backtick  ``
+
+usecase -->conversion of String
+        -->storing product prices -->replace , fetch a part of data
+        -->locating the element in the webpage-->uses the string
+
+string pool memory -->part of heap memory -->exclusive for literal string
+Heap memory -->object related will be stored here
+
+template literal --> ${variablename}
+
+Testleaf -->fealtsesT
+
+0 --> f, 1-->e
+
+length -->
+
+
+For palindrome --> madam -->madam
+length same
+original and reversed words to be same
+
+//string remaining methods
+array
+functiontype
+
+playwright
+
+
+
+
+https://forms.office.com/r/LJ4JN4WGEE
