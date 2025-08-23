@@ -1,0 +1,77 @@
+Agenda:
+----
+Remaining Stringmethods
+breakout
+Array  
+breakout
+Functions Types:
+Named Functions
+Anonymous Functions
+Arrow Functions
+Asynchronous function 
+Callback & Promise
+-----------------------------------
+
+rev+=cName.charAt[i]
+rev = no data ""
+count=0
+
+string +  string -->stringstring
+console.log(""+string)
+rev= nodata+new data
+rev=T
+rev =T+e --Types
+charAt
+length
+indexof
+split
+join
+
+substring-->return the sequence of letters from which you mention
+ -->substring(startindex)
+ -->substring(startindex,endindex)
+
+slice -->performs the same as substring 
+     -->also accepts postivie and negative index 
+     slice(start)
+     slice(start,end)
+
+
+    1 2 3 4 5  
+
+    -1 -2 -3 -4 -5
+   
+    1,5
+    
+    
+    chrome
+    c=0  -6
+    h=1  -5
+    r=2   -4
+    0=3  -3
+    m=4   -2
+    e=5  -1
+
+
+    Array --> collection of elements
+    store all the pdtname
+    all the price
+    collection of similar elements-->java
+    string -->"","",""
+    number-->15,01,12
+
+    js -->stores multiple elements of different datatype
+       -->array size is dynamic
+
+
+
+       let array=[23,45,65,78,23,90]
+
+       for(i=0;...){
+         for(j=i+1){
+            if(arr[i]==arr[j])
+            {
+               print the data
+            }
+         }
+       }
