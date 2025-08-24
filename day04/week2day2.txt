@@ -1,0 +1,61 @@
+Agenda
+------
+Functions types 
+Playwright Basics 
+
+------
+
+Functions -->block of code,reusable
+
+
+1.function declaration /Named function
+   
+   function funName(arg){
+        reeturn 
+   }
+     
+2.Function expression
+  let variableName= function (){
+    
+  }
+  //function without name is anonymous function
+3.Asynchronous
+  synchronous -->runs one after the other
+  asynchronous --> runs simultaneously
+
+4.Arrow function:
+ ---------------
+ consciesly writing the script 
+ simple way to write a script 
+ one liner 
+()=>return
+fat arrow
+
+5.callback
+ ---------
+calling one function as parameter into other other function
+
+functionName()
+num
+
+orderfood-->kitchen-->preparethefood-->table
+
+6.Promise: ES6 (js vesrion 6)
+   3 states Promise
+   pending  
+   fulfillment  then()
+   rejected   catch()
+-------------------
+npm init playwright@latest
+
+cdp -->chrome dev protocol
+
+
+//open the application in the incognito mode
+//opens in headless -->background mode
+
+3 levels -->test level -->high priority
+         -->project level -->this takes second priority
+         -->global level -->this takes lowest prority
+
+
