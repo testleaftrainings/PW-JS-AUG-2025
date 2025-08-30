@@ -1,0 +1,66 @@
+Week3.day1
+
+Day05
+======
+
+08:45AM to 09.00AM - Recap of 
+09.00AM to 09:30AM -Playwright Architecture
+09.30AM to 10.15AM -Understanding DOM 
+10.15AM to 10.30AM -Break
+10.30AM to 11.15AM -Basic locators 
+11.15AM to 11.40AM -Breakout
+11.40AM to 12.40PM -Basic XPath
+12.40PM to 01.00PM -Breakout
+
+
+DOM -->document Object Model /developer /Html design -->find information elements
+
+-->root tag ...
+-->tags -->link based
+-->paragragh -->dropdown element
+
+--> tabular stucture -->icon -->end of the page
+Text -->linktext
+
+text -->text
+tag --> attribute Css Selector Syntax 
+id --># id value(attributeValue)
+
+class attribute --> .attributeVlaue 
+attribute based [id="username"]
+
+tag[attribute='attributeValue'] 
+input[id="username"] 
+
+
+#username 
+.inputLogin 
+[for='username']
+
+
+Xpath Syntax
+-------------
+
+
+
+
+
+
+
+
+Dropdown
+confirmed from dom with if not handle element as normally using .click()
+
+page.selectOption choose the value from the options (dd)-->using value attribute {value:"LEAD_EMPLOYEE"} -->black text {label:"Existing Customer"} -->index {index:3} -->4th element in the option Playwright Locators getByRole -->button,link,radio... ("link",{name:"blackText"}) getByLabel -->Black text with getByText ->black text getByPlaceHolder -->placeholder attribute getByTitle -->title attribute
+
+Advanced css selector
+
+parent locator > child tag createLeadForm_dataSourceId > option [id=createLeadForm_dataSourceId] > option [class=top] > input
+
+first() nth() last()
+
+sibiling (immediate) tagname[attribute="value"] + tagname
+
+cousin (following elements matching to the current element) tagname[attribute="value"] ~ tagname
+
+https://forms.office.com/r/AJ6W1yQ3kw
