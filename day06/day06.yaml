@@ -1,0 +1,79 @@
+
+Day06
+-------
+-> Recap 
+-> Advanced Xpath
+-> Break
+-> Dropdown handling
+-> Breakout
+-> Playwright Locators
+-> Breakout
+-> Assertions
+
+Basic Xpath:
+attribute based Xpath
+text based xpath
+partial attribute based xpath
+partial text based xpath
+collection based xpath
+
+CSS:
+id -> (#attributeValue)
+name ->locator'[name='attributeValue']
+class -> .attributeValue
+text -> text='attributeValue'
+
+
+Xpath:
+parent to child tag
+ex: //div[@class='MoPwtI']/input
+(//div[@class='dialog']/button)[2]
+//div[@class='dialog']/button[text()='Confirm']
+
+Grandparent to grandchild tag
+ex: //div[@class='_5dbb']//input -> first(),last(),nth()
+await page.locator("//div[@class='_5dbb']//input").first().fill()
+await page.locator("//div[@class='_5dbb']//input").last().fill()
+await page.locator("//div[@class='_5dbb']//input").nth(3).fill()
+
+
+Edler to younger sibling
+ex: //label[text()='Search Amazon.in']/following-sibling::input
+
+
+elder cousin to younger cousin
+ex: //input[@id='username']/following::input[@id='password'] 
+
+
+
+Dropdown:
+1. select dropdown
+<select>
+<option>
+
+await page.selectOption()
+label --> visible text
+value --> value attribute
+index --> index of the option (0,1,2,3...)
+
+
+2. Non Select dropdown
+<li>
+<ul>
+
+
+ClassRoom:
+Use PageFixture
+Url:https://www.telerik.com/contact
+1st dropdown -> index
+2nd dropdown -> value
+3rd dropdown -> label
+
+
+Playwright Locators:
+
+-> getByRole  - text,button,checkbox,link,radio,heading
+-> getByLabel -
+-> getByText -
+-> getByPlaceholder -
+-> getByAltText - img
