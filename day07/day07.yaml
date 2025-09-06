@@ -1,0 +1,30 @@
+week4.day1
+
+09:00 - 10:00 -> Playwright Assertions
+10:00 - 10:15 -> Break
+10:15 - 11:30 -> TypeScript Basics
+11:30 - 12:00 -> Breakout
+12:00 - 13:00 -> TypeScript 
+
+
+Playwright Assertions:
+Types:
+1.Auto Retry 
+2.Non-Retry
+3.soft
+4.hard
+
+Assertions tpes:
+Generic Type- toEqual, toHaveTitle
+Locator Type -tobeEnabled
+page type - toHaveURL
+API Assertions
+Negating Assertions
+expect().not.
+
+
+value =24
+excpect(value).not.toEqual(25)
+
+value="LeafTaps"
+expect(value).not.toContain("Leaf")
