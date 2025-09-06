@@ -1,0 +1,11 @@
+var num = 34;
+console.log(num);
+var empName;
+empName = "Dilip";
+empName = "kumar";
+console.log(empName);
+var value = 3.14;
+console.log(value);
+var empList;
+empList = ["Dilip", "Kumar", "Ravi"];
+console.log(empList);
