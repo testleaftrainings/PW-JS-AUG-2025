@@ -1,0 +1,122 @@
+week4.day2
+
+09:00-10:00 -> TypeScript 
+10:00-10:20 -> Break
+10:20-11:15 -> Alert
+11:15-11:45 -> Breakout
+11:45-12:45 -> Frame
+12:45-13:10 -> Breakout
+
+
+Union & Intersection Types in TypeScript:
+
+Union -> OR
+Intersection -> AND
+
+let status=string|number 
+status=200
+status="created"
+
+
+
+Alert:
+Popup message
+Error Message
+Warning Message
+
+*We cannot ingore alert
+
+Modal alert:
+simple alert -> can only one action OK
+confirmation alert -> two action (OK, Cancel)
+prompt alert -> input box, (OK, Cancel)
+
+
+
+
+  url :https://www.leafground.com/alert.xhtml
+  click on Show button
+  handel prompt alert
+  type.accpet("Dilip")
+
+
+
+
+
+
+
+
+Frame:
+iframe-> in-line Frame
+* in Dom //iframe
+* inspect the page  view page source
+
+-> Html inside another Html
+DocType
+<html>
+<head></head>
+<body>
+
+<iframe src="abc.html">
+document of abc.html
+<html>
+<head></head>
+<body></body> 
+</html>
+</iframe>
+
+</body>
+</html>
+
+
+Iframe :
+Based on index
+FrameObject
+FrameLocator
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+https://forms.office.com/r/seAtnmW796
