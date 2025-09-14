@@ -1,0 +1,185 @@
+week5.day2
+
+-> Skip login / Storage state
+-> Breakout + Break
+-> Data Parametrization-csv/json
+->   Classroom 
+-> Data Parametrization-env file
+->  Classroom
+
+
+
+
+StorageState -->cookies
+ skip the login-->store the login info
+
+Classroom:
+use storage state for Leaftaps application(url,usename,password,login,crmsfa)
+use it in other test
+click on Contacts
+click on create conatct
+
+
+
+ 
+
+Data Parameterization:
+
+* Data Driven testing
+* run the sae test logic over a whole set of different inputs
+-> Coverage
+-> Maintainability 
+-> Readability 
+
+csv -comma separated values
+TestCaseID,Username,password
+Tc001,dilip@testleaf.com,Leaf@123
+Tc002,vidyar@testleaf.com,Sales@123
+
+
+step:1 --> install csv-parse
+ npm install csv-parse
+
+step:2 --> use parse() --> imported from csv-parse/sync
+parse(pathofthefile)
+
+step:3 -->install fs (file system)
+npm install fs
+
+Each row will be considered as one test 
+2 tests -->unique desc of the test
+
+path.join(__dirname,"") -->current directory with the filepath
+path.resolve(__dirname,"")
+
+columns-->true -->read first row as header
+
+to read single data
+
+for(){
+// Learn to read CSV values -> Tc001
+// Learn to read CSV values -> Tc002
+}
+
+test(`Learn to read CSV values ${loginCredentials[0].TestCaseId}`, async ({page}) => {
+    await page.goto("http://leaftaps.com/opentaps/control/login")
+    await page.locator("#username").fill(loginCredentials[0].Username)
+    await page.fill("#password",loginCredentials[0].Pasword)
+    await page.click(".decorativeSubmit") 
+    })
+----------------------------------------------------------------------------
+json -->javascript object notation
+
+ key : value
+single Set of data: {}
+{
+"tcName":"TC001"
+"UserName":"Demosalesmanager"
+"Password":"crmsfa"
+}
+
+
+Multiple set of data: [{},{}]
+[ {
+  key :  value
+"TestID":"Tc001"
+"username":"Democsr"
+"password":"crmsfa"
+
+},
+
+{
+key :  value
+"TestID":"Tc002"
+"username":"Democsr"
+"password":"crmsfa"
+}]
+    key value pair
+
+
+import loginInfo from '../../constants/login.json'
+
+test(`Read json data`,async()=>{
+for(let login of loginInfo){
+    console.log(login.Username)
+}
+})
+
+
+
+
+
+
+
+
+Classroom:
+Login With SalesForce application
+Load the url  :https://login.salesforce.com/?locale=in
+Enter username 
+Enter password
+click on Login
+
+Username : dilip@testleaf.com, vidyar@testleaf.com
+password : Leaf@123                  Sales@123
+
+Both Json and CSV
+
+
+
+env -->environment file
+-->db ,api token, crendetials -->qa, prod, api
+
+to read data from env file
+
+step:1  -->install dotenv
+npm install dotenv
+
+step:2 --> prod.env
+dotenv.config({path:`constants/prod.env`})
+
+Multiple file to read
+const fileTORead=process.env.envFile
+dotenv.config({path:`constants/${fileTORead}.env`})
+
+set the filename
+$env:envFile="staging"
+
+unset
+$env:envFile=""
+
+to know which file is set for execution
+$env:envFile
+
+
+config file to set the environment
+
+npx playwright test filename.spec.ts --config=playwright.staging.config.ts
+
+install run 
+
+npm install run --save-dev
+
+run dev
+
+package.json
+"scripts": {
+   "run.staging": "npx playwright test learnEnv.spec.ts  --config=playwright.staging.config.ts",
+   "run.qa": "npx playwright test filename.spec.ts  --config=playwright.qa.config.ts",
+    "run.all": "run.staging run.qa"  
+  },
+
+
+
+
+
+
+// QA.env
+QA.spce.ts
+dotenv.config({path:`utils/QA.env`})
+
+//prod.env
+prod.spec.ts
+dotenv.config({path:`utils/prod.env`})
+
+//common.spec.ts
+-> QA.env, Prod.env
