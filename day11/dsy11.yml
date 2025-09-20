@@ -1,0 +1,156 @@
+
+Week6 day1
+
+Agenda
+--------
+ API Introduction
+ Headers 
+ Break 
+ API with Postman (CURD operation)
+ Classroom
+ Global Variables
+ Classroom
+
+ API -> Application Programming Interface
+ Backend process
+
+
+ REST API
+
+ HTTP Methods/CRUD op/Verbs
+ Authentication
+ Headers
+ Request Body
+ Response Code
+
+
+ Http Methods:
+ Post -> create a new resources
+ Get -> fetch the data
+ Put (updating)-> to replace complete information of existing resources
+ Patch(updating)-> to replace Partial value of existing resources
+ Delete -> delete the record
+
+
+ Authentication:
+ No Authentication  -> no login
+ Basic Authentication -> username & Password
+ OAuth -> Client id and client secret
+ JWT
+ API Key
+
+
+ HTTP Header:
+ Content-Type -> application/json
+
+ Endpoint : 
+ https://qeaglecom-my.sharepoint.com/:p:/r/personal/ravindran_ramdas_testleaf_com/_layouts/15/Doc.aspx?sourcedoc=%7BAB1E2E5B-D18D-40FB-8158-82B364FEC8F3%7D&file=REST%20API%20Basics_ForPW.pptx&action=edit&mobileredirect=true
+
+
+
+
+
+sys_id 
+2cad6e968388721015869665eeaad3cc ->
+
+13ed225683c8721015869665eeaad343 ->
+
+
+Post-> create new resource
+uri,auth,header,req body,res body -> 201 Created
+
+Get-> Get the resource
+uri,auth,header,res body -> 200 OK
+Get request we should not give "Request Body"
+
+Patch -> Patrial update
+uri,auth,header,req body, res body -> 200 OK
+
+Delete-> Delete resource
+uri,auth,header,res body-> 204 No Content
+
+classRoom 1:
+https://dev194776.service-now.com/
+admin
+mZE@l60wP%iO
+
+-> click on ALL
+-> Rest API Explorer
+-> table - change request
+-> change Plan 
+(Post,Get,Patch,Delete)
+
+
+ url/path parameter?Query parameter
+
+ path parameter: 
+ Part of the url -> specific resources ->mandatory
+ https://qeaglecom-my.sharepoint.com/:p:/r/personal/
+
+ query parameter: 
+ sent after the ? in the url 
+ used to filter,search data
+ optional
+ https://qeaglecom-my.sharepoint.com/:p:/r/personal/ravindran_ramdas_testleaf_com/_layouts/15/Doc.aspx?sourcedoc=%7BAB1E2E5B-D18D-40FB-8158-82B364FEC8F3%7D&file=REST%20API%20Basics_ForPW.pptx&action=edit&mobileredirect=true
+
+
+ form:
+ {
+ "username":"dilip@testleaf.com"
+ }
+
+
+ Status code:
+ 200,201,204,400,404,403,500,401
+
+Post:
+We have request body
+201 /200 -> resources successfully Created 
+
+Get:
+200 -> OK
+No need having request body
+
+Put/Patch:
+200 -> OK
+we have request body
+
+Delete:
+No need having Request body
+204 -> No content
+
+400-bad request
+401-unauthorized
+402-payment required
+403-forbidden
+404-not found
+
+500-internal server error
+502-Bad gateway
+503-services unavailable
+
+ClassRoom 1
+
+url: https://dev277770.service-now.com/
+username:admin
+Password:1io7Xr@hSN$S
+
+Endpoint: https://dev277770.service-now.com/api/now/table/{tableName}
+tableName=change request
+{"short_description":""}
+Post, Get,Patch,Delete
+
+
+Variables:
+1.Gobal level Variables ->  access variable inside all Collections
+2.Collection level Variables -> access variable inside one collection
+3.Environment level Variables -> QA, DEV, PROD
+
+Path and Query parameter:
+Path parameter -> Identifies a specific record (url/./././)
+https://dev277770.service-now.com/api/now/table/incident/{{sys_id}}
+
+
+Query parameter:(?)
+filter, sort,limit response 
+(Url/path?sysparm_fields=number)
