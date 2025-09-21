@@ -1,0 +1,188 @@
+{
+	"info": {
+		"_postman_id": "39fa3cf9-8c18-4e68-952f-4d948980c5d9",
+		"name": "PW_AUG_SF_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "34817915"
+	},
+	"item": [
+		{
+			"name": "CreateToken",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data=pm.response.json()\r",
+							"var access_Token=data.access_token\r",
+							"pm.collectionVariables.set(\"token\",access_Token)\r",
+							"\r",
+							"var instance_Url=data.instance_url \r",
+							"pm.collectionVariables.set(\"url\",instance_Url)"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "manikandanleo4922@agentforce.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "India@1234",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "3MVG9dAEux2v1sLs_5LgrWbWWJbMYKRgBajBibwGyik0pC_tXNFGsk6aV8h1owvGj6hsaxRWhzGX5WP1O87h5",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "EE7E666EF8204C869125AC8160C78B0F93277C544B84F8B89A0D59AD9FB3AD1C",
+							"type": "text"
+						}
+					]
+				},
+				"url": "https://login.salesforce.com/services/oauth2/token"
+			},
+			"response": []
+		},
+		{
+			"name": "CeateLead",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{token}}"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"lastname\":\"Kumar\",\r\n\"firstname\":\"Dilip\",\r\n\"company\":\"Testleaf\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{url}}/services/data/v64.0/sobjects/Lead"
+			},
+			"response": []
+		},
+		{
+			"name": "CreateAccount",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{token}}"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Dilip\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{url}}/services/data/v64.0/sobjects/Account"
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateLead",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{token}}"
+					}
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"lastname\":\"Raj\",\r\n\"firstname\":\"Dilip\",\r\n\"company\":\"TL\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{url}}/services/data/v64.0/sobjects/Lead/00QgL000005p2EbUAI"
+			},
+			"response": []
+		},
+		{
+			"name": "GetLead",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{token}}"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "{{url}}/services/data/v64.0/sobjects/Lead/00QgL000005p2EbUAI"
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteLead",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{token}}"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": "{{url}}/services/data/v64.0/sobjects/Lead/00QgL000005p2EbUAI"
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": ""
+		},
+		{
+			"key": "url",
+			"value": ""
+		}
+	]
+}
