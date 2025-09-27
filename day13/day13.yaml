@@ -1,0 +1,153 @@
+week7.day1
+-> Playwright Test Runner
+-> Break
+-> OOPS (class, object,Access Modifiers)
+-> BreakoutSession
+-> Inheritance
+-> BreakoutSession
+-> Polymorphsim
+
+
+
+Test Annotation: configure the Behaviour of the test
+test.only -> run the test which marked as only
+test.skip -> test will not run
+test.fail -> Mark test as expected to fail
+test.fixme -> mark test as not ready yet
+test.use -> override context 
+test.info -> it shows additional information about test
+test.describe -> group your test
+test.describe.parallel -> run tests in parallel
+test.describe.serial -> run tests in serial
+
+
+
+oops with typescript
+
+OOPs-> Object Oriented Programming Language
+-> Object
+java script -> prototype based
+-> Reusability
+-> Maintainable
+-> Readable
+-> Scalability
+-> Redundancy
+-> Modularity
+
+
+Class:
+
+A Class is like a template or buleprint that defines properties and methods 
+to all object of that type.
+
+* properties let name="Dilip" 
+let name:string="Dilip"
+
+* methods -> launchBrowser(){
+}
+
+* constructor -> it will initialize the class properties and Methods while cereating Object
+
+class Browser{
+
+//properties
+empName:string="Dilip"
+
+//method
+browserDetails(){
+
+}
+
+//constructor -  two types
+1. Default -> constructor(){
+}
+
+2. parameter -> constructor(user:string){
+this.empName=user
+}
+
+
+
+this-> will reffer the current class properties and methods
+
+constructor:
+1. Default -> constructor()
+2. paramter -> constructor(user:string,age:number)
+
+
+OOPs: 
+
+Inheritance:
+its a relationship between two class
+parent class and child class
+
+types:
+Single Inheritance :  parent -> child
+Multilevel Inheritance : GrandParent -> parent -> child
+Hierarchical Inheritance : browser -> chrome ,browser -> edge , browser->firefox 
+
+ts -> it will  not support mulitple Inheritance -> PA&PB -> PC
+
+keyword: extends
+child extends parent  -> work
+
+parent extends child ->this will not work
+
+
+ClassRoom 2:
+Parent file
+ Create class Browser
+ Create 2 methods browserType, protected browserVersion
+
+Child file
+Create class Chrome 
+Create 1 method launchBrowser
+create object for Chrome
+
+
+Polymorphsim:
+
+-> many forms
+
+2 types Polymorphsim:
+
+1.Method overloading -> Complie poly
+2.Method overriding -> Run poly
+
+Method overloading:
+Inside the same class we can create multiple method with same Method name,but 
+different paramters should be passed
+
+class Base{
+
+Elementclick(locator:string):void
+Elementclick(locator:string,forceCick:string):void
+
+Elementclick(locator:string){
+
+}
+
+
+}
+
+
+Method overriding:
+use Method overriding -> Inheritance
+connect between two different class with same method signature and paramters only 
+implemenation can change
+
+export class parent{
+
+phone(){
+console.log(iphone 15)
+}
+}
+//object-> iphone 15
+
+clas child extends parent{
+
+phone(){
+console.log(iphone 16 pro)
+}
+}
+//object-> iphone 16 pro
