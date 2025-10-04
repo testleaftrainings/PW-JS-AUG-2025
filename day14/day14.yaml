@@ -1,0 +1,183 @@
+week7.day2
+
+-> Polymorphsim
+-> Abstraction
+-> Break + BreakoutSession
+-> Custom Fixture
+-> Page Object Model
+-> Breakout
+
+
+
+
+Polymorphsim:
+
+-> many forms
+
+2 types Polymorphsim:
+
+1.Method overloading -> Complie poly
+2.Method overriding -> Run poly
+
+Method overloading:
+Inside the same class we can create multiple method with same Method name,but 
+different paramters should be passed
+
+class Base{
+
+Elementclick(locator:string):void
+Elementclick(locator:string,forceCick:boolean):void
+
+Elementclick(locator:string,forceCick?:boolean){
+if(forcceCick==true){ 
+console.log(click with force)}
+else{
+console.log(click normally)}
+}
+
+}
+Elementclick("#id") ->normal
+
+Elementclick("#id",true) ->force
+
+
+Method overriding:
+use Method overriding -> Inheritance
+connect between two different class with same method signature and paramters only 
+implemenation can change
+
+export class parent{
+
+phone(){
+console.log(iphone 15)
+}
+}
+//object-> iphone 15
+
+class child extends parent{
+
+phone(){
+console.log(iphone 16 pro)
+}
+}
+//object child -> iphone 16 pro
+
+
+
+Abstraction:
+Process of hiding implementation deatils and showing only the essential features
+
+1.Abstract Class
+2.Interface 
+
+Abstract class -> 0 to 100 % Abstract method
+it have both implementation and unimplementation
+
+launch(){ 
+//implementation method
+}
+
+loadUrl():void //unimplementation
+
+
+Interface:
+100% Abstract method
+
+username():void
+password():void
+
+============================
+Fixture:
+{page}-> page Fixture -> browser -> context -> page
+{context} -> context Fixture
+-> can be shared across multiple tests
+-> setup -> use in test -> teardown
+
+Custom Fixture:
+user defined fixture
+testfile using test.extend[]
+
+
+const br=await chromium.launch()
+const cont= await br.newContext()
+const page= await cont.newPage()  
+await page.goto("url")
+
+test("login",async({page})=>{
+await page.goto("url")
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Design Pattern:
+POM -> Page Object Model
+based on the webpage 
+
+LoginPage:
+*username
+*password
+*clickonLogin
+
+WelcomePage:
+*Click on crmsfa
+*Logout
+
+MyHomePage:
+*Leads
+*Accounts
+*Cases
+
+MyLeadsPage:
+*CreateLead -click 
+
+
+CreateLead:
+*Cname
+*Fname
+*Lname
+
+ViewLead:
+*verify 
+
+MyAccountPage:
+*CreateAccount
+
+AccountsPage:
+*AccountName
+
+POM:
+*Organizing the code
+*Improved Readability
+*Easy Maintenances
+*Increased Prod
+* Reusability
+
+LoadUrl(){
+url
+}
+
+enteruserdetails(){
+username
+password
+}
+
+
+clickOnLogin(){
+
+}
+
+POM:
+
+pages -> .ts file
+execution -> .spec.ts file
