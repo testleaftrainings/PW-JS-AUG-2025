@@ -1,0 +1,84 @@
+CUCUMBER -->
+
+TDD -> Test driven development
+ATDD -> Acceptance Test driven development(Comm gap b/w tch n non-tech)
+BDD -> Behaviour driven development
+(both tech & non tech team understand)
+
+https://cucumber.io/docs/cucumber/step-definitions
+
+BDD -->Behaviour driven -development
+to brigde the gap between tech (Dev +test) and non tech (PO/BA)
+ english -->Gherkin language
+ Given -->pre conditions 
+ When -->test condition
+ Then -->postive result
+ But -->negative result
+ And -->conjunction
+ Feature -->High level description
+ Scenario -->Login with positive credentials
+ Scenario Outline and Examples -->to parametrization
+
+Test driven development  -->TDD  -->negative aspect 
+(Dev+Test)
+write test first and then develop
+
+Workflow:
+ Feature file        -->step definition               --->runner
+  gherkin language   -->actual logic with pw code    execution part
+  step 
+
+  Pre requirement
+   install cucumber lib
+     npm install @cucumber/cucumber
+   pw lib
+        npm init playwright@latest
+   typescript lib 
+        npm install ts-node typescript --save-dev
+        tsc --int
+
+
+step:1 create a feature file  --> .feature
+step:2 create cucumber.json /cucumber.js
+{
+ "default":{
+     "formatOptions":{
+        "snippetInterface":"async-await"
+     },
+     "paths":[
+            "featuresStep/"  -> feature file
+    ],
+     "require":["./tests/*.ts"],
+     "requireModule":["ts-node/register"],
+     "format":[
+        "html:./reports/cucumber_report.html"
+     ] ,
+     "parallel":2
+    }
+}
+step:3 create a fileName.ts under tests folder
+
+
+Step: 3 run the command 
+       npx cucumber-js features/createAccount.feature  -->snippets will be generated
+     
+Step:4 
+ use the snippet to implement the steps in filename.ts  with pw script
+ Given('Enter the credentials', async function () {  //first feature file
+           await this.page.fill("#username","DemoCSR")
+           await this.page.fill("#password","crmsfa")
+         });
+
+Ste:5 Use Hooks.ts to write precondition steps use World interface
+
+For tags and profile
+   npx cucumber-js --tags @smoke
+   npx cucumber-js -p chrome
+
+   to run with script with package.json
+
+   script:{
+    "test" : "npx cucumber-js -p chrome"
+   }
+   
+   npm run test

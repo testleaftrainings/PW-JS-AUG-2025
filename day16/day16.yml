@@ -1,0 +1,38 @@
+Framework summary 
+A TypeScript Playwright test automation framework organized around Page Object Model (POM), 
+custom fixtures, helper utilities and API helpers, with centralized config, 
+reporting (Allure/playwright reports) and CI-ready setup.
+
+Small contract (what this doc covers)
+Inputs: test specs (in tests), page objects (pages/), fixtures (customFixtures/), test data (data/)
+Outputs: test reports (allure-results/, playwright-report), logs (logs/), CI pipeline job status
+Success criteria: deterministic, fast, parallelizable, debuggable E2E + API tests
+Error modes: flaky UI elements, network/timeouts, test-data drift, auth token expiry
+
+Top-level folder map (from your repo)
+tests — test specs (*.spec.ts) (e.g., TC002_create_lead.spec.ts)
+pages/ — Page Objects (e.g., salesforceLogin.ts, salesforceLeadPage.ts)
+customFixtures/ — custom Playwright fixtures (e.g., salesForceFixture.ts)
+helpers/ — utilities: playwright.ts, requestUtils.ts, fakerUtils.ts, verificationUtils.ts, csvUtil.ts
+api/ — API service implementations and API tests (api_services/*, api_Tests/*)
+data/ — test data and interfaces (accountdata.json, accounts.csv)
+reporter/, playwright-report, allure-results/ — reports and traces
+config files: playwright.config.ts, global.setup.ts, customReporterConfig.ts, package.json, tsconfig.json
+
+Architecture & design (high level)
+Test runner: Playwright (TypeScript)
+Test organization: specs call into Page Objects which expose high-level actions. 
+Page objects are thin wrappers around Playwright locators + domain actions.
+Fixtures: custom fixtures encapsulate authenticated sessions, shared browser contexts, 
+or test data injections (see customFixtures/salesForceFixture.ts).
+Helpers: single-responsibility utility modules (request helpers for API, CSV/JSON utilities, 
+faker wrappers).
+API layer: dedicated service modules (api/api_services/*) used by API tests and to seed data 
+for UI tests.
+Reporting: Allure + Playwright report traces and HTML. Traces saved on failure via config.
+CI: workflow exists (playwright.yml) — parallel shards, artifact upload for failures.
+
+
+
+
+
